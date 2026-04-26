@@ -422,6 +422,9 @@ header .navbar {
 
 .blog-posts .blog-post {
     margin-bottom: 30px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .blog-posts .blog-thumb img {
@@ -436,12 +439,29 @@ header .navbar {
     border-bottom: 1px solid #eee;
 }
 
+.show-more {
+    display: inline-block;
+    padding: 4px 10px;
+    background: #f1f1f1;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #333;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.show-more:hover {
+    background: #e2e2e2;
+    color: #000;
+}
+
 .blog-posts .down-content span {
     font-size: 18px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     font-weight: 900;
     color: #f48840;
+    flex-grow: 1;
 }
 
 .blog-posts .down-content h4 {
@@ -586,6 +606,7 @@ ul.page-numbers li a:hover {
 .blog-posts .comments {
     margin-top: 30px;
 }
+
 
 .blog-posts .comments ul li {
     display: inline-block;
@@ -1044,7 +1065,7 @@ footer p a:hover {
 /* Modern Dropdown Design */
 .custom-dropdown .dropdown-menu {
     border: none;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     border-radius: 12px;
     padding: 15px 10px;
     min-width: 200px;
@@ -1097,6 +1118,7 @@ footer p a:hover {
 .dropdown-toggle::after {
     display: none;
 }
+
 /* Responsive Style */
 @media (max-width: 1250px) {
     .owl-banner .owl-nav .owl-prev {
@@ -1290,6 +1312,7 @@ footer p a:hover {
         color: #fff !important;
         padding-left: 20px;
     }
+
 
     /* Smooth Animation */
     @keyframes fadeInSlide {

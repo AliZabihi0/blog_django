@@ -20,28 +20,7 @@
 
     <!-- Banner Ends Here -->
 
-    <section class="call-to-action">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="main-content">
-                        <div class="row">
-                            <div class="col-lg-8">
-                                <span>Stand Blog HTML5 Template</span>
-                                <h4>Creative HTML Template For Bloggers!</h4>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="main-button">
-                                    <a href="https://templatemo.com/tm-551-stand-blog" target="_parent">Download
-                                        Now!</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
 
     <section class="blog-posts grid-system">
@@ -58,13 +37,16 @@
                                         </div>
                                         <div class="down-content">
                                             <span>{{ post.category.all.first }}</span>
-                                            <a href="post-details.html"><h4>{{ post.title}}</h4></a>
+                                            <a href="{{ post.get_absolute_url }}"><h4>{{ post.title }}</h4></a>
                                             <ul class="post-info">
                                                 <li><a href="#">{{ post.author.get_full_name }}</a></li>
-                                                <li><a href="#">{{ post.created}}</a></li>
+                                                <li><a href="#">{{ post.created }}</a></li>
                                                 <li><a href="#">12 Comments</a></li>
                                             </ul>
-                                            <p>{{ post.content }}</p>
+                                            <p >
+                                                {{ post.content|truncatewords:40 }}
+                                                <a href="{{ post.get_absolute_url }}" class="show-more">Show more...</a>
+                                            </p>
                                             <div class="post-options">
                                                 <div class="row">
                                                     <div class="col-lg-12">
@@ -82,16 +64,30 @@
                             {% endfor %}
                             <div class="col-lg-12">
                                 <ul class="page-numbers">
-                                    <li><a href="#">1</a></li>
-                                    <li class="active"><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
+                                    {% if posts.has_other_pages %}
+                                        {% if posts.has_previous %}
+                                            <li><a href="?page={{ posts.previous_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}"><i
+                                                    class="fa fa-angle-double-left"></i></a></li>
+                                        {% endif %}
+
+                                        {% for i in page_range %}
+                                            {% if posts.number ==  i %}
+                                                <li class="active"><a href="?page={{ i }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">{{ i }}</a></li>
+                                            {% else %}
+                                                <li class=""><a href="?page={{ i }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}">{{ i }}</a></li>
+                                            {% endif %}
+                                        {% endfor %}
+                                        {% if posts.has_next %}
+                                            <li><a href="?page={{ posts.next_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}"><i
+                                                    class="fa fa-angle-double-right"></i></a></li>
+                                        {% endif %}
+                                    {% endif %}
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-               {% include "includes/sidebar.html" %}
+                {% include "includes/sidebar.html" %}
             </div>
         </div>
     </section>

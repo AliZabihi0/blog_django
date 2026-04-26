@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'account_app.apps.AccountAppConfig',
     'post_app.apps.PostAppConfig',
     'django_cleanup.apps.CleanupConfig',
-    'django_render_partial'
+    'django_render_partial',
+    'django_social_share'
 ]
 
 MIDDLEWARE = [
@@ -69,6 +70,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'context_processors.context_processors.recent_posts',
                 'context_processors.context_processors.categories',
+
             ],
         },
     },
@@ -107,7 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/6.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'fa-ir'
 
 TIME_ZONE = 'UTC'
 
