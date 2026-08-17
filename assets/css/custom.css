@@ -1,0 +1,43 @@
+.comment-reply-btn {
+    display: inline-block;
+    padding: 6px 14px;
+    background: #fb9857; /* رنگ اصلی سایت */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s ease;
+    margin-top: 8px;
+}
+
+.comment-reply-btn:hover {
+    background: #ef6c10; /* رنگ هاور */
+    transform: translateY(-2px);
+}
+
+
+.login-comment-btn {
+    margin-top: 50px;
+    display: inline-block;
+    padding: 12px 24px;
+    background: #fb9857; /* رنگ توجه */
+    color: #fff;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(255, 107, 107, 0.4);
+    transition: 0.3s ease;
+}
+
+.login-comment-btn:hover {
+    background: #ef6c10;
+    box-shadow: 0 6px 14px rgba(255, 76, 76, 0.5);
+    color: #fff;
+}
+
+/*for login & register page*/
+/* پیام خطای کلی بالای فرم */
+

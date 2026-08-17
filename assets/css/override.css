@@ -1,0 +1,11 @@
+@font-face {
+    font-family: Vazirmatn Black;
+        /*src: url("../fonts/Bufalo.ttf");*/
+    font-weight: normal;
+
+
+}
+
+* {
+    font-family: Vazirmatn Black, Serif, serif;
+}
